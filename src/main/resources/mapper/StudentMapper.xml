@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruimin.oadsp.dao.StudentMapper">
+  <resultMap id="BaseResultMap" type="com.ruimin.oadsp.model.Student">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="graceid" jdbcType="INTEGER" property="graceid" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="userpwd" jdbcType="VARCHAR" property="userpwd" />
+  </resultMap>
+  <select id="selectAllstudent" parameterType="com.ruimin.oadsp.model.Student" resultMap="BaseResultMap">
+  select * from student
+  </select>
+  
+  <select id="delectByGraceid"  parameterType="com.ruimin.oadsp.model.Student" resultMap="BaseResultMap">
+  delete from student where GRACEID=#{GRACEID}
+  </select>
+  
+  <insert id="addStudent" parameterType="com.ruimin.oadsp.model.Student" >
+  insert into student (GRACEID,STUDENTNAME,STUDENTPWD)values(#{GRACEID},#{STUDENTNAME},#{STUDENTPWD})
+  
+  </insert>
+  
+  <select id="updateStudent" parameterType="com.ruimin.oadsp.model.Student">
+  update client set STUDENTNAME=#{STUDENTNAME},STUDENTPWD=#{STUDENTPWD} where GRACEID=#{GRACEID}
+  </select>
+  
+  
+</mapper>

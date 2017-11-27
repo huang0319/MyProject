@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruimin.oadsp.dao.GraceMapper">
+  <resultMap id="BaseResultMap" type="com.ruimin.oadsp.model.Grace">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="graceid" jdbcType="INTEGER" property="graceid" />
+    <result column="grace" jdbcType="VARCHAR" property="grace" />
+    
+  </resultMap>
+  <select id="selectAllG"  resultMap="BaseResultMap">
+  select * from grace
+  </select>
+  
+</mapper>
